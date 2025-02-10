@@ -1,8 +1,8 @@
 # Meal Manager todo list
 * [x] ~~Add excalidraw whiteboards to project~~
 * [x] ~~Add issue templates~~
-* [ ] Set up vitest
-* [ ] Add shadcn components
+* [x] ~~Set up vitest~~
+* [x] ~~Add shadcn components~~
 * [ ] Create home page that is rendered from readme
 * [ ] Set up authentication with Google and Github
 * [ ] Finish navbar
