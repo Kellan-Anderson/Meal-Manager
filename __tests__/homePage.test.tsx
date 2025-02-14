@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
 import { render, screen } from "@testing-library/react"
 import { MarkdownCheckbox } from "~/app/page";
+import { HomepageNav } from "~/app/_homePageComponents/navbar";
 
 describe("The home page", () => {
   /**
@@ -43,4 +44,12 @@ describe("The home page", () => {
       expect(text).toBeDefined();
     })
   });
+
+  test("Should render a navbar with a sign in button", () => {
+    render(<HomepageNav />);
+
+    expect(screen.getByRole("navigation")).toBeDefined();
+    expect(screen.getByRole("button", { name: "Sign in" })).toBeDefined();
+  });
+
 });
