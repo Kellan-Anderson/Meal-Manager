@@ -21,7 +21,7 @@ export default async function Home() {
 
 type MarkdownCheckboxProps = React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>
 
-function MarkdownCheckbox(props : MarkdownCheckboxProps) : React.ReactNode {
+export function MarkdownCheckbox(props : MarkdownCheckboxProps) : React.ReactNode {
   const children = props.children
   const childrenAsString = children?.toString();
   if(!childrenAsString) {
