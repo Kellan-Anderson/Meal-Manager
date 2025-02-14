@@ -23,6 +23,7 @@ type MarkdownCheckboxProps = React.DetailedHTMLProps<React.LiHTMLAttributes<HTML
 
 export function MarkdownCheckbox(props : MarkdownCheckboxProps) : React.ReactNode {
   const children = props.children
+  // eslint-disable-next-line
   const childrenAsString = children?.toString();
   if(!childrenAsString) {
     return children;
