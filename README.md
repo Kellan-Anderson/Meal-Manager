@@ -1,6 +1,6 @@
 # Meal Manager
 
-An app created for the buget minded cook
+An app created for the budget minded cook
 
 ### Recipes
 
