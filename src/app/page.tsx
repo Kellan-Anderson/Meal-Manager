@@ -5,13 +5,12 @@ import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { SignInButton } from "./_components/signInButton";
-import { auth } from "~/server/auth";
+import { RedirectIfSignedIn } from "~/server/auth/utils";
 
 export default async function Home() {
+  await RedirectIfSignedIn();
+  
   const readmeContent = await fs.readFile(process.cwd() + '/README.md');
-
-  const session = await auth();
-  console.log({ session })
 
   return (
     <>
