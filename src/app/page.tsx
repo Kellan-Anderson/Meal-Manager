@@ -4,9 +4,13 @@ import { Checkbox } from "~/components/ui/checkbox";
 import { Button } from "~/components/ui/button";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { SignInButton } from "./_components/signInButton";
+import { RedirectIfSignedIn } from "~/server/auth/utils";
 
 export default async function Home() {
-  const readmeContent = await fs.readFile(process.cwd() + '/README.md') 
+  await RedirectIfSignedIn();
+  
+  const readmeContent = await fs.readFile(process.cwd() + '/README.md');
 
   return (
     <>
@@ -61,9 +65,7 @@ export function MarkdownCheckbox(props : MarkdownCheckboxProps) : React.ReactNod
 export function HomepageNav() {
   return (
     <nav className="flex flex-row justify-end top-0 sticky shadow-md p-2 pr-4 bg-background opacity-100">
-      <Button asChild variant="secondary" className="rounded-md">
-        <Link href="/sign-in">Sign In</Link>
-      </Button>
+      <SignInButton />
     </nav>
   );
 }
