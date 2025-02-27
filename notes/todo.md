@@ -3,8 +3,8 @@
 * [x] ~~Add issue templates~~
 * [x] ~~Set up vitest~~
 * [x] ~~Add shadcn components~~
-* [ ] Create home page that is rendered from readme
-* [ ] Set up authentication with Google and Github
+* [x] ~~Create home page that is rendered from readme~~
+* [x] ~~Set up authentication with Google and Github~~
 * [ ] Finish navbar
 * [ ] Finish settings page
 * [ ] Finish pantry page
