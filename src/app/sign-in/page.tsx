@@ -1,6 +1,6 @@
-import { RedirectIfSignedIn } from "~/server/auth/utils";
 import { SignInWithGithubButton, SignInWithGoogleButton } from "./signInButtons";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
+import { RedirectIfSignedIn } from "~/server/auth/utils";
 
 export default async function SignInPage() {
   await RedirectIfSignedIn();
