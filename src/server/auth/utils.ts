@@ -19,6 +19,12 @@ export async function ProtectRoute(props?: ProtectRouteProps) {
     }
     redirect(redirectURL);
   }
+
+  // Check to see if the user has set up a username
+  if(!session.user.username) {
+    redirect("/sign-in/new");
+  }
+
   return session;
 }
 

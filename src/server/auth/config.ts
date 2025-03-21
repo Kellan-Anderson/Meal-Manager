@@ -22,15 +22,17 @@ declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      username: string | null;
       // ...other properties
       // role: UserRole;
     } & DefaultSession["user"];
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User {
+    // ...other properties
+    // role: UserRole;
+    username: string | null;
+  }
 }
 
 /**
@@ -50,6 +52,7 @@ export const authConfig = {
       clientSecret: env.GOOGLE_SECRET,
     }),
   ],
+  // @ts-expect-error This is included to get the next-auth adapter to accept custom fields
   adapter: DrizzleAdapter(db, {
     usersTable: users,
     accountsTable: accounts,
@@ -62,6 +65,7 @@ export const authConfig = {
       user: {
         ...session.user,
         id: user.id,
+        username: user.username
       },
     }),
   },
