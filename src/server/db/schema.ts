@@ -34,8 +34,12 @@ export const users = createTable("user", {
   username: varchar("username", { length: 127 })
 });
 
-export const usersRelations = relations(users, ({ many }) => ({
+export const usersRelations = relations(users, ({ many, one }) => ({
   accounts: many(accounts),
+  settings: one(userSettings, {
+    fields: [users.id],
+    references: [userSettings.userId]
+  })
 }));
 
 export const accounts = createTable(
@@ -115,5 +119,5 @@ export const userSettings = createTable('user_settings', {
   addTax: boolean('add_tax').notNull().default(true),
   taxPercentageAsInt: integer('tax_percentage_As_int').notNull().default(7),
   addEmptyItemsToShoppingList: boolean('add_empty_items_to_shopping_list').notNull().default(false),
-  deleteItemsFromShoppingList: boolean('delete_items_from_shopping_list').notNull().default(true),
+  keepScreenOnWhileCooking: boolean('keep_screen_on_while_cooking').notNull().default(false)
 })

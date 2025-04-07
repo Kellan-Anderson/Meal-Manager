@@ -28,9 +28,7 @@ There are several settings a user can change for their account. These settings a
 
   - **Automatically add empty items to shopping list:** An option that when enabled, will automatically add an item marked as empty in the pantry to the shopping list.
 
-  - **Delete items from shopping list:** An option that when enabled, will delete items from the users shopping list when they are marked complete. If disabled, the items will appear as complete and be moved to the bottom of the list.
-
-  - **Add new items to pantry:** When enabled, will automatically add items that are not already in the users pantry when they are added when creating a recipe.
+  - **Keep screen on:** When enabled, will keep the screen on as a user is making a recipe.
 
 * **Appearance**
   - **Theme:** Gives the user the option to change the theme of the application between light and dark mode. The theme options are light, dark, and match system.
